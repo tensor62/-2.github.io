@@ -1,209 +1,202 @@
-{\rtf1\ansi\ansicpg1251\cocoartf2865
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме | Бектурсун Улар</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2d3436;
+            --accent: #0984e3; /* Красивый синий акцент */
+            --bg: #ffffff;
+            --light-bg: #f9f9f9;
+            --text-muted: #636e72;
+            --border: #edf2f7;
+        }
 
-\f0\fs24 \cf0 <!DOCTYPE html>\
-<html lang="ru">\
-<head>\
-    <meta charset="UTF-8">\
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
-    <title>\uc0\u1056 \u1077 \u1079 \u1102 \u1084 \u1077  | \u1041 \u1077 \u1082 \u1090 \u1091 \u1088 \u1089 \u1091 \u1085  \u1059 \u1083 \u1072 \u1088 </title>\
-    <link rel="preconnect" href="https://fonts.googleapis.com">\
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">\
-    <style>\
-        :root \{\
-            --primary: #2d3436;\
-            --accent: #0984e3; /* \uc0\u1050 \u1088 \u1072 \u1089 \u1080 \u1074 \u1099 \u1081  \u1089 \u1080 \u1085 \u1080 \u1081  \u1072 \u1082 \u1094 \u1077 \u1085 \u1090  */\
-            --bg: #ffffff;\
-            --light-bg: #f9f9f9;\
-            --text-muted: #636e72;\
-            --border: #edf2f7;\
-        \}\
-\
-        * \{ margin: 0; padding: 0; box-sizing: border-box; \}\
-\
-        body \{\
-            font-family: 'Inter', sans-serif;\
-            background-color: var(--light-bg);\
-            color: var(--primary);\
-            line-height: 1.7;\
-            padding: 2rem;\
-        \}\
-\
-        .resume-card \{\
-            max-width: 850px;\
-            margin: 0 auto;\
-            background: var(--bg);\
-            border-radius: 20px;\
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);\
-            overflow: hidden;\
-            display: flex;\
-            flex-direction: column;\
-        \}\
-\
-        /* \uc0\u1042 \u1077 \u1088 \u1093 \u1085 \u1103 \u1103  \u1095 \u1072 \u1089 \u1090 \u1100  \u1089  \u1092 \u1086 \u1090 \u1086  */\
-        .hero \{\
-            background: linear-gradient(135deg, #2d3436 0%, #000000 100%);\
-            color: white;\
-            padding: 3rem;\
-            display: flex;\
-            align-items: center;\
-            gap: 2rem;\
-        \}\
-\
-        .profile-img \{\
-            width: 160px;\
-            height: 160px;\
-            border-radius: 50%;\
-            border: 4px solid rgba(255,255,255,0.2);\
-            object-fit: cover; /* \uc0\u1042 \u1072 \u1078 \u1085 \u1086 : \u1092 \u1086 \u1090 \u1086  \u1085 \u1077  \u1073 \u1091 \u1076 \u1077 \u1090  \u1088 \u1072 \u1089 \u1090 \u1103 \u1075 \u1080 \u1074 \u1072 \u1090 \u1100 \u1089 \u1103  */\
-            background: #444;\
-        \}\
-\
-        .hero-info h1 \{\
-            font-size: 2.2rem;\
-            margin-bottom: 0.5rem;\
-            font-weight: 600;\
-        \}\
-\
-        .tag \{\
-            display: inline-block;\
-            background: var(--accent);\
-            padding: 4px 12px;\
-            border-radius: 6px;\
-            font-size: 0.9rem;\
-            font-weight: 500;\
-            margin-bottom: 1rem;\
-        \}\
-\
-        .contacts \{\
-            font-size: 0.9rem;\
-            opacity: 0.9;\
-        \}\
-\
-        /* \uc0\u1050 \u1086 \u1085 \u1090 \u1077 \u1085 \u1090  */\
-        .main-content \{ padding: 3rem; \}\
-\
-        section \{ margin-bottom: 2.5rem; \}\
-\
-        h2 \{\
-            font-size: 1.1rem;\
-            text-transform: uppercase;\
-            letter-spacing: 2px;\
-            color: var(--accent);\
-            margin-bottom: 1.5rem;\
-            border-bottom: 1px solid var(--border);\
-            padding-bottom: 8px;\
-        \}\
-\
-        .exp-item \{\
-            margin-bottom: 1.5rem;\
-            position: relative;\
-            padding-left: 20px;\
-            border-left: 2px solid var(--border);\
-        \}\
-\
-        .exp-item h3 \{ font-size: 1.1rem; font-weight: 600; \}\
-        .company \{ color: var(--text-muted); font-size: 0.95rem; margin-bottom: 5px; \}\
-        .period \{ font-size: 0.85rem; color: #b2bec3; margin-bottom: 8px; \}\
-        \
-        .skills-grid \{\
-            display: grid;\
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));\
-            gap: 15px;\
-        \}\
-\
-        .skill \{\
-            background: var(--light-bg);\
-            padding: 10px 15px;\
-            border-radius: 8px;\
-            font-size: 0.9rem;\
-            font-weight: 500;\
-            text-align: center;\
-        \}\
-\
-        @media (max-width: 650px) \{\
-            .hero \{ flex-direction: column; text-align: center; padding: 2rem; \}\
-            .main-content \{ padding: 1.5rem; \}\
-            body \{ padding: 0.5rem; \}\
-        \}\
-    </style>\
-</head>\
-<body>\
-\
-    <div class="resume-card">\
-        <!-- \uc0\u1043 \u1051 \u1040 \u1042 \u1053 \u1040 \u1071  \u1057 \u1045 \u1050 \u1062 \u1048 \u1071  -->\
-        <div class="hero">\
-            <!-- \uc0\u1063 \u1090 \u1086 \u1073 \u1099  \u1092 \u1086 \u1090 \u1086  \u1079 \u1072 \u1088 \u1072 \u1073 \u1086 \u1090 \u1072 \u1083 \u1086 , \u1085 \u1072 \u1079 \u1086 \u1074 \u1080  \u1092 \u1072 \u1081 \u1083  'me.jpg' \u1080  \u1087 \u1086 \u1083 \u1086 \u1078 \u1080  \u1088 \u1103 \u1076 \u1086 \u1084  \u1089  index.html -->\
-            <img src="me.jpg" alt="\uc0\u1041 \u1077 \u1082 \u1090 \u1091 \u1088 \u1089 \u1091 \u1085  \u1059 \u1083 \u1072 \u1088 " class="profile-img">\
-            <div class="hero-info">\
-                <span class="tag">\uc0\u1040 \u1076 \u1084 \u1080 \u1085 \u1080 \u1089 \u1090 \u1088 \u1072 \u1090 \u1086 \u1088  / \u1057 \u1090 \u1072 \u1088 \u1096 \u1080 \u1081  \u1072 \u1076 \u1084 \u1080 \u1085 \u1080 \u1089 \u1090 \u1088 \u1072 \u1090 \u1086 \u1088 </span>\
-                <h1>\uc0\u1041 \u1077 \u1082 \u1090 \u1091 \u1088 \u1089 \u1091 \u1085  \u1059 \u1083 \u1072 \u1088 </h1>\
-                <div class="contacts">\
-                    <p>\uc0\u55357 \u56525  \u1041 \u1080 \u1096 \u1082 \u1077 \u1082  \'95 \u55357 \u56542  0559 46 36 26</p>\
-                    <p>\uc0\u55356 \u57218  22 \u1076 \u1077 \u1082 \u1072 \u1073 \u1088 \u1103  2003 (22 \u1075 \u1086 \u1076 \u1072 )</p>\
-                </div>\
-            </div>\
-        </div>\
-\
-        <div class="main-content">\
-            <!-- \uc0\u1054  \u1057 \u1045 \u1041 \u1045  -->\
-            <section>\
-                <h2>\uc0\u1054  \u1089 \u1077 \u1073 \u1077 </h2>\
-                <p>\uc0\u1054 \u1087 \u1099 \u1090 \u1085 \u1099 \u1081  \u1072 \u1076 \u1084 \u1080 \u1085 \u1080 \u1089 \u1090 \u1088 \u1072 \u1090 \u1086 \u1088  \u1089  \u1085 \u1072 \u1074 \u1099 \u1082 \u1086 \u1084  \u1082 \u1086 \u1085 \u1090 \u1088 \u1086 \u1083 \u1103  \u1082 \u1072 \u1095 \u1077 \u1089 \u1090 \u1074 \u1072  \u1089 \u1077 \u1088 \u1074 \u1080 \u1089 \u1072 . \u1059 \u1084 \u1077 \u1102  \u1088 \u1077 \u1096 \u1072 \u1090 \u1100  \u1082 \u1086 \u1085 \u1092 \u1083 \u1080 \u1082 \u1090 \u1085 \u1099 \u1077  \u1089 \u1080 \u1090 \u1091 \u1072 \u1094 \u1080 \u1080 , \u1082 \u1086 \u1086 \u1088 \u1076 \u1080 \u1085 \u1080 \u1088 \u1086 \u1074 \u1072 \u1090 \u1100  \u1082 \u1086 \u1084 \u1072 \u1085 \u1076 \u1091  \u1080  \u1089 \u1086 \u1079 \u1076 \u1072 \u1074 \u1072 \u1090 \u1100  \u1072 \u1090 \u1084 \u1086 \u1089 \u1092 \u1077 \u1088 \u1091  \u1075 \u1086 \u1089 \u1090 \u1077 \u1087 \u1088 \u1080 \u1080 \u1084 \u1089 \u1090 \u1074 \u1072  \u1085 \u1072  \u1074 \u1099 \u1089 \u1096 \u1077 \u1084  \u1091 \u1088 \u1086 \u1074 \u1085 \u1077 . \u1057 \u1090 \u1091 \u1076 \u1077 \u1085 \u1090  \u1089 \u1090 \u1086 \u1084 \u1072 \u1090 \u1086 \u1083 \u1086 \u1075 \u1080 \u1095 \u1077 \u1089 \u1082 \u1086 \u1075 \u1086  \u1092 \u1072 \u1082 \u1091 \u1083 \u1100 \u1090 \u1077 \u1090 \u1072  \u1050 \u1043 \u1052 \u1040 , \u1095 \u1090 \u1086  \u1087 \u1088 \u1080 \u1091 \u1095 \u1080 \u1083 \u1086  \u1084 \u1077 \u1085 \u1103  \u1082  \u1074 \u1099 \u1089 \u1086 \u1082 \u1086 \u1081  \u1076 \u1080 \u1089 \u1094 \u1080 \u1087 \u1083 \u1080 \u1085 \u1077  \u1080  \u1086 \u1090 \u1074 \u1077 \u1090 \u1089 \u1090 \u1074 \u1077 \u1085 \u1085 \u1086 \u1089 \u1090 \u1080 .</p>\
-            </section>\
-\
-            <!-- \uc0\u1054 \u1055 \u1067 \u1058  -->\
-            <section>\
-                <h2>\uc0\u1054 \u1087 \u1099 \u1090  \u1088 \u1072 \u1073 \u1086 \u1090 \u1099 </h2>\
-                \
-                <div class="exp-item">\
-                    <h3>\uc0\u1057 \u1090 \u1072 \u1088 \u1096 \u1080 \u1081  \u1072 \u1076 \u1084 \u1080 \u1085 \u1080 \u1089 \u1090 \u1088 \u1072 \u1090 \u1086 \u1088  / \u1057 \u1087 \u1077 \u1094 \u1080 \u1072 \u1083 \u1080 \u1089 \u1090  \u1054 \u1050 \u1050 </h3>\
-                    <div class="company">Medical Assistance Group</div>\
-                    <div class="period">2024 \'97 \uc0\u1053 \u1072 \u1089 \u1090 \u1086 \u1103 \u1097 \u1077 \u1077  \u1074 \u1088 \u1077 \u1084 \u1103 </div>\
-                    <p>\uc0\u1050 \u1086 \u1086 \u1088 \u1076 \u1080 \u1085 \u1072 \u1094 \u1080 \u1103  \u1088 \u1072 \u1073 \u1086 \u1090 \u1099  \u1089 \u1084 \u1077 \u1085 \u1099 , \u1082 \u1086 \u1085 \u1090 \u1088 \u1086 \u1083 \u1100  \u1082 \u1072 \u1095 \u1077 \u1089 \u1090 \u1074 \u1072  \u1088 \u1072 \u1079 \u1075 \u1086 \u1074 \u1086 \u1088 \u1086 \u1074 , \u1088 \u1072 \u1073 \u1086 \u1090 \u1072  \u1089 \u1086  \u1089 \u1083 \u1086 \u1078 \u1085 \u1099 \u1084 \u1080  \u1074 \u1086 \u1079 \u1088 \u1072 \u1078 \u1077 \u1085 \u1080 \u1103 \u1084 \u1080  \u1080  \u1078 \u1072 \u1083 \u1086 \u1073 \u1072 \u1084 \u1080 , \u1074 \u1077 \u1076 \u1077 \u1085 \u1080 \u1077  \u1086 \u1090 \u1095 \u1077 \u1090 \u1085 \u1086 \u1089 \u1090 \u1080 .</p>\
-                </div>\
-\
-                <div class="exp-item">\
-                    <h3>\uc0\u1040 \u1076 \u1084 \u1080 \u1085 \u1080 \u1089 \u1090 \u1088 \u1072 \u1090 \u1086 \u1088 </h3>\
-                    <div class="company">\uc0\u1050 \u1083 \u1091 \u1073  \'abGreen Club\'bb (\u1075 . \u1050 \u1072 \u1088 \u1072 \u1082 \u1086 \u1083 )</div>\
-                </div>\
-\
-                <div class="exp-item">\
-                    <h3>\uc0\u1054 \u1092 \u1080 \u1094 \u1080 \u1072 \u1085 \u1090 </h3>\
-                    <div class="company">\uc0\u1056 \u1077 \u1089 \u1090 \u1086 \u1088 \u1072 \u1085  \'abHEDO\'bb (\u1052 \u1086 \u1089 \u1082 \u1074 \u1072 ) / \'ab\u1041 \u1072 \u1088 \u1072 \u1096 \u1077 \u1082 \'bb (\u1041 \u1080 \u1096 \u1082 \u1077 \u1082 )</div>\
-                    <p>\uc0\u1056 \u1072 \u1073 \u1086 \u1090 \u1072  \u1087 \u1086  \u1087 \u1088 \u1077 \u1084 \u1080 \u1072 \u1083 \u1100 \u1085 \u1099 \u1084  \u1089 \u1090 \u1072 \u1085 \u1076 \u1072 \u1088 \u1090 \u1072 \u1084  \u1089 \u1077 \u1088 \u1074 \u1080 \u1089 \u1072  \u1080  \u1088 \u1077 \u1089 \u1090 \u1086 \u1088 \u1072 \u1085 \u1085 \u1086 \u1081  \u1087 \u1089 \u1080 \u1093 \u1086 \u1083 \u1086 \u1075 \u1080 \u1080 .</p>\
-                </div>\
-            </section>\
-\
-            <!-- \uc0\u1054 \u1041 \u1056 \u1040 \u1047 \u1054 \u1042 \u1040 \u1053 \u1048 \u1045  -->\
-            <section>\
-                <h2>\uc0\u1054 \u1073 \u1088 \u1072 \u1079 \u1086 \u1074 \u1072 \u1085 \u1080 \u1077 </h2>\
-                <div class="exp-item">\
-                    <h3>\uc0\u1050 \u1099 \u1088 \u1075 \u1099 \u1079 \u1089 \u1082 \u1072 \u1103  \u1075 \u1086 \u1089 \u1091 \u1076 \u1072 \u1088 \u1089 \u1090 \u1074 \u1077 \u1085 \u1085 \u1072 \u1103  \u1084 \u1077 \u1076 \u1080 \u1094 \u1080 \u1085 \u1089 \u1082 \u1072 \u1103  \u1072 \u1082 \u1072 \u1076 \u1077 \u1084 \u1080 \u1103 </h3>\
-                    <div class="company">\uc0\u1057 \u1087 \u1077 \u1094 \u1080 \u1072 \u1083 \u1100 \u1085 \u1086 \u1089 \u1090 \u1100 : \u1057 \u1090 \u1086 \u1084 \u1072 \u1090 \u1086 \u1083 \u1086 \u1075 \u1080 \u1103 </div>\
-                    <div class="period">2022 \'97 \uc0\u1085 \u1072 \u1089 \u1090 \u1086 \u1103 \u1097 \u1077 \u1077  \u1074 \u1088 \u1077 \u1084 \u1103 </div>\
-                </div>\
-            </section>\
-\
-            <!-- \uc0\u1053 \u1040 \u1042 \u1067 \u1050 \u1048  -->\
-            <section>\
-                <h2>\uc0\u1053 \u1072 \u1074 \u1099 \u1082 \u1080 </h2>\
-                <div class="skills-grid">\
-                    <div class="skill">\uc0\u1050 \u1083 \u1080 \u1077 \u1085 \u1090 \u1089 \u1082 \u1080 \u1081  \u1089 \u1077 \u1088 \u1074 \u1080 \u1089 </div>\
-                    <div class="skill">\uc0\u1044 \u1077 \u1083 \u1086 \u1074 \u1086 \u1077  \u1086 \u1073 \u1097 \u1077 \u1085 \u1080 \u1077 </div>\
-                    <div class="skill">\uc0\u1059 \u1087 \u1088 \u1072 \u1074 \u1083 \u1077 \u1085 \u1080 \u1077  \u1082 \u1086 \u1084 \u1072 \u1085 \u1076 \u1086 \u1081 </div>\
-                    <div class="skill">\uc0\u1050 \u1086 \u1085 \u1090 \u1088 \u1086 \u1083 \u1100  \u1082 \u1072 \u1095 \u1077 \u1089 \u1090 \u1074 \u1072 </div>\
-                    <div class="skill">\uc0\u1056 \u1072 \u1073 \u1086 \u1090 \u1072  \u1089  \u1087 \u1088 \u1077 \u1090 \u1077 \u1085 \u1079 \u1080 \u1103 \u1084 \u1080 </div>\
-                    <div class="skill">\uc0\u1056 \u1091 \u1089 \u1089 \u1082 \u1080 \u1081  / \u1050 \u1099 \u1088 \u1075 \u1099 \u1079 \u1089 \u1082 \u1080 \u1081  (C2)</div>\
-                </div>\
-            </section>\
-        </div>\
-    </div>\
-\
-</body>\
-</html>}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--primary);
+            line-height: 1.7;
+            padding: 2rem;
+        }
+
+        .resume-card {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--bg);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Верхняя часть с фото */
+        .hero {
+            background: linear-gradient(135deg, #2d3436 0%, #000000 100%);
+            color: white;
+            padding: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.2);
+            object-fit: cover; /* Важно: фото не будет растягиваться */
+            background: #444;
+        }
+
+        .hero-info h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--accent);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .contacts {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Контент */
+        .main-content { padding: 3rem; }
+
+        section { margin-bottom: 2.5rem; }
+
+        h2 {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+
+        .exp-item {
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid var(--border);
+        }
+
+        .exp-item h3 { font-size: 1.1rem; font-weight: 600; }
+        .company { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 5px; }
+        .period { font-size: 0.85rem; color: #b2bec3; margin-bottom: 8px; }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+        }
+
+        .skill {
+            background: var(--light-bg);
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        @media (max-width: 650px) {
+            .hero { flex-direction: column; text-align: center; padding: 2rem; }
+            .main-content { padding: 1.5rem; }
+            body { padding: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume-card">
+        <!-- ГЛАВНАЯ СЕКЦИЯ -->
+        <div class="hero">
+            <!-- Чтобы фото заработало, назови файл 'me.jpg' и положи рядом с index.html -->
+            <img src="me.jpg" alt="Бектурсун Улар" class="profile-img">
+            <div class="hero-info">
+                <span class="tag">Администратор / Старший администратор</span>
+                <h1>Бектурсун Улар</h1>
+                <div class="contacts">
+                    <p>📍 Бишкек • 📞 0559 46 36 26</p>
+                    <p>🎂 22 декабря 2003 (22 года)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- О СЕБЕ -->
+            <section>
+                <h2>О себе</h2>
+                <p>Опытный администратор с навыком контроля качества сервиса. Умею решать конфликтные ситуации, координировать команду и создавать атмосферу гостеприимства на высшем уровне. Студент стоматологического факультета КГМА, что приучило меня к высокой дисциплине и ответственности.</p>
+            </section>
+
+            <!-- ОПЫТ -->
+            <section>
+                <h2>Опыт работы</h2>
+                
+                <div class="exp-item">
+                    <h3>Старший администратор / Специалист ОКК</h3>
+                    <div class="company">Medical Assistance Group</div>
+                    <div class="period">2024 — Настоящее время</div>
+                    <p>Координация работы смены, контроль качества разговоров, работа со сложными возражениями и жалобами, ведение отчетности.</p>
+                </div>
+
+                <div class="exp-item">
+                    <h3>Администратор</h3>
+                    <div class="company">Клуб «Green Club» (г. Каракол)</div>
+                </div>
+
+                <div class="exp-item">
+                    <h3>Официант</h3>
+                    <div class="company">Ресторан «HEDO» (Москва) / «Барашек» (Бишкек)</div>
+                    <p>Работа по премиальным стандартам сервиса и ресторанной психологии.</p>
+                </div>
+            </section>
+
+            <!-- ОБРАЗОВАНИЕ -->
+            <section>
+                <h2>Образование</h2>
+                <div class="exp-item">
+                    <h3>Кыргызская государственная медицинская академия</h3>
+                    <div class="company">Специальность: Стоматология</div>
+                    <div class="period">2022 — настоящее время</div>
+                </div>
+            </section>
+
+            <!-- НАВЫКИ -->
+            <section>
+                <h2>Навыки</h2>
+                <div class="skills-grid">
+                    <div class="skill">Клиентский сервис</div>
+                    <div class="skill">Деловое общение</div>
+                    <div class="skill">Управление командой</div>
+                    <div class="skill">Контроль качества</div>
+                    <div class="skill">Работа с претензиями</div>
+                    <div class="skill">Русский / Кыргызский (C2)</div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+</body>
+</html>
