@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме | Бектурсун Улар</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #2d3436;
+            --text-secondary: #636e72;
+            --accent: #0984e3;
+            --border: #dfe6e9;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-radius: 12px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 30px;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 12px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .header-text h1 {
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+            color: #000;
+        }
+
+        .header-text .title {
+            font-size: 1.2rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        section { margin-bottom: 35px; }
+
+        h2 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::after {
+            content: "";
+            flex: 1;
+            margin-left: 15px;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 25px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .company { color: var(--accent); }
+        .date { color: var(--text-secondary); font-size: 0.9rem; }
+
+        .details {
+            font-size: 0.95rem;
+            margin-top: 8px;
+            padding-left: 15px;
+            border-left: 2px solid var(--bg-color);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: var(--bg-color);
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .lang-item { margin-bottom: 5px; }
+
+        @media (max-width: 600px) {
+            header { flex-direction: column; text-align: center; }
+            .container { padding: 20px; }
+            .exp-header { flex-direction: column; }
+            .skills-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <!-- Положи фото в папку и назови его profile.jpg -->
+            <img src="profile.jpg" alt="Бектурсун Улар" class="profile-pic">
+            <div class="header-text">
+                <h1>Бектурсун Улар Эрикович</h1>
+                <div class="title">Администратор / Старший администратор</div>
+                <div class="contact-info">
+                    <p>📍 Бишкек | 📱 0559 46 36 26</p>
+                    <p>🎂 22.12.2003 (22 года)</p>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <h2>О себе</h2>
+            <p>Опытный администратор с навыком контроля качества сервиса. Цель: грамотная координация работы смены, встреча гостей на высшем уровне и оперативное решение любых организационных вопросов. Умею решать конфликтные ситуации и создавать уютную атмосферу.</p>
+        </section>
+
+        <section>
+            <h2>Опыт работы</h2>
+            
+            <div class="experience-item">
+                <div class="exp-header">
+                    <span class="company">Medical Assistance Group</span>
+                    <span class="date">2024 — Наст. время</span>
+                </div>
+                <div style="font-weight: 500;">Старший администратор / Специалист ОКК</div>
+                <div class="details">
+                    • Координация работы сотрудников смены.<br>
+                    • Контроль качества разговоров и соблюдения скриптов.<br>
+                    • Работа с возражениями и сложными жалобами клиентов.<br>
+                    • Ведение отчетности и соблюдение конфиденциальности.
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <span class="company">Клуб «Green Club» (г. Каракол)</span>
+                </div>
+                <div style="font-weight: 500;">Администратор</div>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <span class="company">Ресторан «HEDO» (Москва) / «Барашек» (Бишкек)</span>
+                </div>
+                <div style="font-weight: 500;">Официант</div>
+                <div class="details">
+                    • Знание стандартов премиального гостеприимства.<br>
+                    • Работа с международными гостями и ресторанная психология.
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Образование</h2>
+            <div class="education-item">
+                <div class="exp-header">
+                    <span>КГМА им. И.К. Ахунбаева</span>
+                    <span class="date">2022 — Наст. время</span>
+                </div>
+                <div>Специальность: Стоматология</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Профессиональные навыки</h2>
+            <div class="skills-grid">
+                <div class="skill-tag">Клиентский сервис премиум-класса</div>
+                <div class="skill-tag">Деловое общение и грамотная речь</div>
+                <div class="skill-tag">Уверенное владение ПК и базами данных</div>
+                <div class="skill-tag">Управление командой и стрессоустойчивость</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Языки</h2>
+            <div class="lang-item"><b>Русский:</b> Свободно</div>
+            <div class="lang-item"><b>Кыргызский:</b> Свободно</div>
+            <div class="lang-item"><b>Английский:</b> Базовый</div>
+        </section>
+    </div>
+</body>
+</html>
