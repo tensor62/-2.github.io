@@ -3,198 +3,257 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Резюме | Бектурсун Улар</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Бектурсун Улар | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2d3436;
-            --accent: #0984e3; /* Красивый синий акцент */
-            --bg: #ffffff;
-            --light-bg: #f9f9f9;
-            --text-muted: #636e72;
-            --border: #edf2f7;
+            --primary: #000000;
+            --accent: #3b82f6;
+            --text-main: #1f2937;
+            --text-sub: #6b7280;
+            --bg: #f8fafc;
+            --white: #ffffff;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--light-bg);
-            color: var(--primary);
-            line-height: 1.7;
-            padding: 2rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
         }
 
-        .resume-card {
-            max-width: 850px;
-            margin: 0 auto;
-            background: var(--bg);
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            animation: fadeInUp 0.8s ease-out;
         }
 
-        /* Верхняя часть с фото */
-        .hero {
-            background: linear-gradient(135deg, #2d3436 0%, #000000 100%);
-            color: white;
-            padding: 3rem;
+        /* HEADER SECTION */
+        header {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 24px;
             display: flex;
             align-items: center;
-            gap: 2rem;
+            gap: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            margin-bottom: 24px;
+            transition: transform 0.3s ease;
         }
+
+        header:hover { transform: translateY(-5px); }
 
         .profile-img {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            border: 4px solid rgba(255,255,255,0.2);
-            object-fit: cover; /* Важно: фото не будет растягиваться */
-            background: #444;
+            width: 140px;
+            height: 140px;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.15);
         }
 
-        .hero-info h1 {
+        .hero-text h1 {
             font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
         }
 
-        .tag {
+        .role-badge {
             display: inline-block;
-            background: var(--accent);
-            padding: 4px 12px;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
+            background: #eff6ff;
+            color: var(--accent);
+            padding: 6px 14px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 12px;
         }
 
-        .contacts {
-            font-size: 0.9rem;
-            opacity: 0.9;
+        /* CONTACTS GRID */
+        .contacts-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
         }
 
-        /* Контент */
-        .main-content { padding: 3rem; }
+        .contact-item {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-        section { margin-bottom: 2.5rem; }
+        /* SECTIONS */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 24px;
+        }
+
+        section {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
 
         h2 {
             font-size: 1.1rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--accent);
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 8px;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+            color: var(--text-sub);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .exp-item {
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-left: 20px;
-            border-left: 2px solid var(--border);
+        h2::before {
+            content: '';
+            width: 4px;
+            height: 18px;
+            background: var(--accent);
+            border-radius: 4px;
         }
 
-        .exp-item h3 { font-size: 1.1rem; font-weight: 600; }
-        .company { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 5px; }
-        .period { font-size: 0.85rem; color: #b2bec3; margin-bottom: 8px; }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 15px;
+        /* EXPERIENCE & EDUCATION */
+        .card {
+            padding: 16px;
+            border-radius: 16px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            margin-bottom: 10px;
         }
 
-        .skill {
-            background: var(--light-bg);
-            padding: 10px 15px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-align: center;
+        .card:hover {
+            border-color: #e2e8f0;
+            background: #fcfcfd;
+            padding-left: 24px;
         }
 
-        @media (max-width: 650px) {
-            .hero { flex-direction: column; text-align: center; padding: 2rem; }
-            .main-content { padding: 1.5rem; }
-            body { padding: 0.5rem; }
+        .card h3 { font-size: 1.05rem; margin-bottom: 4px; }
+        .card .place { color: var(--accent); font-weight: 600; font-size: 0.9rem; }
+        .card .time { font-size: 0.8rem; color: var(--text-sub); }
+
+        /* SKILLS */
+        .skills-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-node {
+            background: #f1f5f9;
+            padding: 10px 18px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: default;
+        }
+
+        .skill-node:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .grid-layout { grid-template-columns: 1fr; }
+            header { flex-direction: column; text-align: center; }
+            .profile-img { width: 120px; height: 120px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="resume-card">
-        <!-- ГЛАВНАЯ СЕКЦИЯ -->
-        <div class="hero">
-            <!-- Чтобы фото заработало, назови файл 'me.jpg' и положи рядом с index.html -->
+    <div class="container">
+        <!-- HEADER -->
+        <header>
             <img src="https://i.ibb.co/LzdS6Y63/pvx4y-N8-P.jpg" alt="Бектурсун Улар" class="profile-img">
-            <div class="hero-info">
-                <span class="tag">Администратор / Старший администратор</span>
+            <div class="hero-text">
+                <span class="role-badge">Senior Administrator / Quality Specialist</span>
                 <h1>Бектурсун Улар</h1>
-                <div class="contacts">
-                    <p>📍 Бишкек • 📞 0559 46 36 26</p>
-                    <p>🎂 22 декабря 2003 (22 года)</p>
+                <div class="contacts-bar">
+                    <div class="contact-item">📍 Бишкек, Кыргызстан</div>
+                    <div class="contact-item">📞 0559 46 36 26</div>
+                    <div class="contact-item">🎂 22.12.2003 (22 года)</div>
                 </div>
             </div>
-        </div>
+        </header>
 
-        <div class="main-content">
-            <!-- О СЕБЕ -->
-            <section>
-                <h2>О себе</h2>
-                <p>Опытный администратор с навыком контроля качества сервиса. Умею решать конфликтные ситуации, координировать команду и создавать атмосферу гостеприимства на высшем уровне. Студент стоматологического факультета КГМА, что приучило меня к высокой дисциплине и ответственности.</p>
-            </section>
+        <div class="grid-layout">
+            <!-- LEFT COLUMN -->
+            <div class="left-col">
+                <section>
+                    <h2>О себе</h2>
+                    <p style="color: var(--text-sub);">Опытный администратор со знанием стандартов премиального сервиса. Моя цель — безупречная координация работы смены и оперативное решение любых задач. Сочетаю медицинскую точность (студент КГМА) с навыками управления командой.</p>
+                </section>
 
-            <!-- ОПЫТ -->
-            <section>
-                <h2>Опыт работы</h2>
-                
-                <div class="exp-item">
-                    <h3>Старший администратор / Специалист ОКК</h3>
-                    <div class="company">Medical Assistance Group</div>
-                    <div class="period">2024 — Настоящее время</div>
-                    <p>Координация работы смены, контроль качества разговоров, работа со сложными возражениями и жалобами, ведение отчетности.</p>
-                </div>
+                <section>
+                    <h2>Опыт работы</h2>
+                    <div class="card">
+                        <h3>Старший администратор / Специалист ОКК</h3>
+                        <p class="place">Medical Assistance Group</p>
+                        <p class="time">2024 — Настоящее время</p>
+                    </div>
+                    <div class="card">
+                        <h3>Администратор</h3>
+                        <p class="place">Green Club (г. Каракол)</p>
+                        <p class="time">Ранее</p>
+                    </div>
+                    <div class="card">
+                        <h3>Официант (Premium Service)</h3>
+                        <p class="place">HEDO (Москва) / Барашек (Бишкек)</p>
+                        <p class="time">Развитие навыков гостеприимства</p>
+                    </div>
+                </section>
+            </div>
 
-                <div class="exp-item">
-                    <h3>Администратор</h3>
-                    <div class="company">Клуб «Green Club» (г. Каракол)</div>
-                </div>
+            <!-- RIGHT COLUMN -->
+            <div class="right-col">
+                <section>
+                    <h2>Образование</h2>
+                    <div class="card">
+                        <h3>Стоматология</h3>
+                        <p class="place">КГМА им. И.К. Ахунбаева</p>
+                        <p class="time">2022 — Наст. время</p>
+                    </div>
+                </section>
 
-                <div class="exp-item">
-                    <h3>Официант</h3>
-                    <div class="company">Ресторан «HEDO» (Москва) / «Барашек» (Бишкек)</div>
-                    <p>Работа по премиальным стандартам сервиса и ресторанной психологии.</p>
-                </div>
-            </section>
+                <section>
+                    <h2>Навыки</h2>
+                    <div class="skills-wrap">
+                        <div class="skill-node">Сервис 5★</div>
+                        <div class="skill-node">Управление сменой</div>
+                        <div class="skill-node">Контроль качества</div>
+                        <div class="skill-node">Работа с жалобами</div>
+                        <div class="skill-node">Деловая этика</div>
+                        <div class="skill-node">Стрессоустойчивость</div>
+                    </div>
+                </section>
 
-            <!-- ОБРАЗОВАНИЕ -->
-            <section>
-                <h2>Образование</h2>
-                <div class="exp-item">
-                    <h3>Кыргызская государственная медицинская академия</h3>
-                    <div class="company">Специальность: Стоматология</div>
-                    <div class="period">2022 — настоящее время</div>
-                </div>
-            </section>
-
-            <!-- НАВЫКИ -->
-            <section>
-                <h2>Навыки</h2>
-                <div class="skills-grid">
-                    <div class="skill">Клиентский сервис</div>
-                    <div class="skill">Деловое общение</div>
-                    <div class="skill">Управление командой</div>
-                    <div class="skill">Контроль качества</div>
-                    <div class="skill">Работа с претензиями</div>
-                    <div class="skill">Русский / Кыргызский (C2)</div>
-                </div>
-            </section>
+                <section>
+                    <h2>Языки</h2>
+                    <div class="card" style="padding: 0; background: none; border: none;">
+                        <p><b>Русский</b> — Свободно</p>
+                        <p><b>Кыргызский</b> — Свободно</p>
+                        <p><b>English</b> — Basic</p>
+                    </div>
+                </section>
+            </div>
         </div>
     </div>
 
