@@ -3,258 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Бектурсун Улар | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Бектурсун Улар | CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #000000;
-            --accent: #3b82f6;
-            --text-main: #1f2937;
-            --text-sub: #6b7280;
-            --bg: #f8fafc;
-            --white: #ffffff;
+            --red: #ff4d4d;
+            --blue: #007aff;
+            --bg: #0a0a0c;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
         }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes fadeIn {
+            from { opacity: 0; filter: blur(10px); }
+            to { opacity: 1; filter: blur(0); }
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Manrope', sans-serif;
             background-color: var(--bg);
-            color: var(--text-main);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 122, 255, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(255, 77, 77, 0.1) 0%, transparent 40%);
+            color: #ffffff;
             line-height: 1.6;
-            padding: 20px;
+            min-height: 100vh;
+            padding: 40px 20px;
         }
 
         .container {
-            max-width: 900px;
-            margin: 40px auto;
-            animation: fadeInUp 0.8s ease-out;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeIn 1.2s ease-out;
         }
 
-        /* HEADER SECTION */
-        header {
-            background: var(--white);
-            padding: 40px;
+        /* GLASS CARD STYLE */
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
             border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 24px;
+            transition: border 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        /* HEADER */
+        header {
             display: flex;
             align-items: center;
             gap: 30px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-            margin-bottom: 24px;
-            transition: transform 0.3s ease;
         }
-
-        header:hover { transform: translateY(-5px); }
 
         .profile-img {
-            width: 140px;
-            height: 140px;
-            border-radius: 20px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
             object-fit: cover;
-            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.15);
+            border: 2px solid var(--blue);
+            padding: 5px;
+            box-shadow: 0 0 20px rgba(0, 122, 255, 0.3);
         }
 
-        .hero-text h1 {
-            font-size: 2.2rem;
+        h1 {
+            font-size: 2.5rem;
             font-weight: 700;
-            letter-spacing: -1px;
-            margin-bottom: 8px;
+            background: linear-gradient(90deg, #fff, #888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .role-badge {
-            display: inline-block;
-            background: #eff6ff;
-            color: var(--accent);
-            padding: 6px 14px;
-            border-radius: 10px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        /* CONTACTS GRID */
-        .contacts-bar {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 12px;
-            margin-top: 15px;
-        }
-
-        .contact-item {
-            font-size: 0.9rem;
-            color: var(--text-sub);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* SECTIONS */
-        .grid-layout {
-            display: grid;
-            grid-template-columns: 1.6fr 1fr;
-            gap: 24px;
-        }
-
-        section {
-            background: var(--white);
-            padding: 32px;
-            border-radius: 24px;
-            margin-bottom: 24px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-        }
-
-        h2 {
-            font-size: 1.1rem;
-            font-weight: 700;
+        .role {
+            color: var(--blue);
+            font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 24px;
-            color: var(--text-sub);
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* TEXT DECOR */
+        h2 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
         }
 
-        h2::before {
-            content: '';
-            width: 4px;
-            height: 18px;
-            background: var(--accent);
-            border-radius: 4px;
+        h2::after {
+            content: "";
+            height: 1px;
+            flex-grow: 1;
+            background: linear-gradient(90deg, var(--red), transparent);
         }
 
-        /* EXPERIENCE & EDUCATION */
-        .card {
-            padding: 16px;
-            border-radius: 16px;
-            border: 1px solid transparent;
-            transition: all 0.3s ease;
-            margin-bottom: 10px;
+        .contact-link {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-right: 20px;
+            transition: color 0.3s;
         }
 
-        .card:hover {
-            border-color: #e2e8f0;
-            background: #fcfcfd;
-            padding-left: 24px;
-        }
+        .contact-link:hover { color: var(--red); }
 
-        .card h3 { font-size: 1.05rem; margin-bottom: 4px; }
-        .card .place { color: var(--accent); font-weight: 600; font-size: 0.9rem; }
-        .card .time { font-size: 0.8rem; color: var(--text-sub); }
+        /* LISTS */
+        .exp-item { margin-bottom: 25px; }
+        .exp-item h3 { font-size: 1.1rem; color: #fff; }
+        .exp-item p { color: #888; font-size: 0.95rem; }
+        .exp-item .date { color: var(--blue); font-size: 0.8rem; font-weight: 700; }
 
-        /* SKILLS */
-        .skills-wrap {
+        .skills-container {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
         }
 
-        .skill-node {
-            background: #f1f5f9;
-            padding: 10px 18px;
-            border-radius: 12px;
+        .skill-badge {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px 16px;
+            border-radius: 100px;
             font-size: 0.85rem;
-            font-weight: 600;
+            border: 1px solid var(--glass-border);
             transition: all 0.3s;
-            cursor: default;
         }
 
-        .skill-node:hover {
-            background: var(--primary);
-            color: white;
-            transform: scale(1.05);
+        .skill-badge:hover {
+            background: var(--red);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 77, 77, 0.4);
         }
 
-        @media (max-width: 768px) {
-            .grid-layout { grid-template-columns: 1fr; }
+        @media (max-width: 600px) {
             header { flex-direction: column; text-align: center; }
-            .profile-img { width: 120px; height: 120px; }
+            h1 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- HEADER -->
-        <header>
-            <img src="https://i.ibb.co/LzdS6Y63/pvx4y-N8-P.jpg" alt="Бектурсун Улар" class="profile-img">
-            <div class="hero-text">
-                <span class="role-badge">Senior Administrator / Quality Specialist</span>
-                <h1>Бектурсун Улар</h1>
-                <div class="contacts-bar">
-                    <div class="contact-item">📍 Бишкек, Кыргызстан</div>
-                    <div class="contact-item">📞 0559 46 36 26</div>
-                    <div class="contact-item">🎂 22.12.2003 (22 года)</div>
+        
+        <!-- HEADER CARD -->
+        <div class="glass-card">
+            <header>
+                <img src="https://i.ibb.co/LzdS6Y63/pvx4y-N8-P.jpg" alt="Бектурсун Улар" class="profile-img">
+                <div>
+                    <span class="role">Администратор / Старший администратор</span>
+                    <h1>Бектурсун Улар</h1>
+                    <div style="margin-top: 15px;">
+                        <a href="tel:0559463626" class="contact-link">📞 0559 46 36 26</a>
+                        <span class="contact-link">📍 Бишкек</span>
+                    </div>
                 </div>
-            </div>
-        </header>
+            </header>
+        </div>
 
-        <div class="grid-layout">
-            <!-- LEFT COLUMN -->
-            <div class="left-col">
-                <section>
-                    <h2>О себе</h2>
-                    <p style="color: var(--text-sub);">Опытный администратор со знанием стандартов премиального сервиса. Моя цель — безупречная координация работы смены и оперативное решение любых задач. Сочетаю медицинскую точность (студент КГМА) с навыками управления командой.</p>
-                </section>
+        <!-- ABOUT -->
+        <div class="glass-card">
+            <h2>О себе</h2>
+            <p style="color: #ccc;">Опытный администратор со знанием стандартов сервиса. Цель: грамотная координация работы смены и создание уютной атмосферы для гостей. Сочетаю дисциплину студента-медика КГМА с навыками управления в премиум-сегменте.</p>
+        </div>
 
-                <section>
-                    <h2>Опыт работы</h2>
-                    <div class="card">
-                        <h3>Старший администратор / Специалист ОКК</h3>
-                        <p class="place">Medical Assistance Group</p>
-                        <p class="time">2024 — Настоящее время</p>
-                    </div>
-                    <div class="card">
-                        <h3>Администратор</h3>
-                        <p class="place">Green Club (г. Каракол)</p>
-                        <p class="time">Ранее</p>
-                    </div>
-                    <div class="card">
-                        <h3>Официант (Premium Service)</h3>
-                        <p class="place">HEDO (Москва) / Барашек (Бишкек)</p>
-                        <p class="time">Развитие навыков гостеприимства</p>
-                    </div>
-                </section>
+        <!-- EXPERIENCE -->
+        <div class="glass-card">
+            <h2>Опыт работы</h2>
+            
+            <div class="exp-item">
+                <span class="date">2024 — ПО НАСТ. ВРЕМЯ</span>
+                <h3>Старший администратор / ОКК</h3>
+                <p>Medical Assistance Group</p>
             </div>
 
-            <!-- RIGHT COLUMN -->
-            <div class="right-col">
-                <section>
-                    <h2>Образование</h2>
-                    <div class="card">
-                        <h3>Стоматология</h3>
-                        <p class="place">КГМА им. И.К. Ахунбаева</p>
-                        <p class="time">2022 — Наст. время</p>
-                    </div>
-                </section>
+            <div class="exp-item">
+                <span class="date">РАНЕЕ</span>
+                <h3>Администратор</h3>
+                <p>Клуб «Green Club» (г. Каракол)</p>
+            </div>
 
-                <section>
-                    <h2>Навыки</h2>
-                    <div class="skills-wrap">
-                        <div class="skill-node">Сервис 5★</div>
-                        <div class="skill-node">Управление сменой</div>
-                        <div class="skill-node">Контроль качества</div>
-                        <div class="skill-node">Работа с жалобами</div>
-                        <div class="skill-node">Деловая этика</div>
-                        <div class="skill-node">Стрессоустойчивость</div>
-                    </div>
-                </section>
-
-                <section>
-                    <h2>Языки</h2>
-                    <div class="card" style="padding: 0; background: none; border: none;">
-                        <p><b>Русский</b> — Свободно</p>
-                        <p><b>Кыргызский</b> — Свободно</p>
-                        <p><b>English</b> — Basic</p>
-                    </div>
-                </section>
+            <div class="exp-item">
+                <span class="date">HORECA</span>
+                <h3>Официант (Premium)</h3>
+                <p>Ресторан «HEDO» (Москва) / «Барашек» (Бишкек)</p>
             </div>
         </div>
+
+        <!-- SKILLS & EDUCATION -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+            
+            <div class="glass-card" style="margin-bottom: 0;">
+                <h2>Навыки</h2>
+                <div class="skills-container">
+                    <div class="skill-badge">Клиентский сервис</div>
+                    <div class="skill-badge">Управление</div>
+                    <div class="skill-badge">Контроль качества</div>
+                    <div class="skill-badge">Конфликтология</div>
+                    <div class="skill-badge">Деловая речь</div>
+                </div>
+            </div>
+
+            <div class="glass-card" style="margin-bottom: 0;">
+                <h2>Образование</h2>
+                <div class="exp-item">
+                    <span class="date">2022 — 2027</span>
+                    <h3>КГМА (Стоматология)</h3>
+                    <p>Кыргызская государственная медицинская академия</p>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
 </body>
