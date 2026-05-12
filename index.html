@@ -1,230 +1,360 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Бектурсун Улар | CV</title>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --red: #ff4d4d;
-            --blue: #007aff;
-            --bg: #0a0a0c;
-            --glass: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
-        }
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Бектурсун Улар — Администратор</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;1,300&family=Jost:wght@200;300;400&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#0e0e0d;color:#f0ece4;font-family:'Jost',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
 
-        @keyframes fadeIn {
-            from { opacity: 0; filter: blur(10px); }
-            to { opacity: 1; filter: blur(0); }
-        }
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.5rem 3rem;background:rgba(14,14,13,0.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,169,110,0.15)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1rem;font-weight:300;letter-spacing:0.2em;text-transform:uppercase;color:#f0ece4;text-decoration:none}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:#8a8680;text-decoration:none;transition:color 0.3s}
+.nav-links a:hover{color:#c9a96e}
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+/* HERO */
+#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+.hero-photo{position:relative;overflow:hidden}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(100%) contrast(1.05)}
+.hero-photo-overlay{position:absolute;inset:0;background:linear-gradient(to right,transparent 55%,#0e0e0d 100%),linear-gradient(to bottom,#0e0e0d 0%,transparent 12%,transparent 82%,#0e0e0d 100%)}
 
-        body {
-            font-family: 'Manrope', sans-serif;
-            background-color: var(--bg);
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(0, 122, 255, 0.1) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(255, 77, 77, 0.1) 0%, transparent 40%);
-            color: #ffffff;
-            line-height: 1.6;
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
+.hero-text{display:flex;flex-direction:column;justify-content:center;padding:8rem 4rem 5rem 3rem;position:relative}
+.hero-tag{font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;color:#c9a96e;margin-bottom:2rem;display:block}
+.hero-name{font-family:'Playfair Display',serif;font-size:clamp(3rem,5vw,5.5rem);font-weight:300;line-height:1.0;margin-bottom:0.5rem}
+.hero-name em{display:block;font-style:italic;color:#e8d5b0}
+.hero-pos{font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:#8a8680;margin-bottom:2.5rem}
+.hero-bio{font-size:0.88rem;color:#8a8680;line-height:1.9;border-left:1px solid #c9a96e;padding-left:1.5rem;margin-bottom:3rem;max-width:460px}
+.contacts{display:flex;flex-direction:column;gap:0.75rem}
+.c-row{display:flex;align-items:center;gap:1rem;font-size:0.82rem;color:#8a8680;text-decoration:none;transition:color 0.25s}
+.c-row:hover{color:#c9a96e}
+.c-label{font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:#c9a96e;width:55px;flex-shrink:0}
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            animation: fadeIn 1.2s ease-out;
-        }
+.hero-stats{position:absolute;bottom:0;left:0;right:0;display:flex;border-top:1px solid rgba(201,169,110,0.15)}
+.hero-stat{flex:1;padding:1.3rem 1.5rem;border-right:1px solid rgba(201,169,110,0.15);text-align:center;background:rgba(14,14,13,0.85)}
+.hero-stat:last-child{border-right:none}
+.stat-val{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:300;color:#c9a96e;display:block}
+.stat-lbl{font-size:0.55rem;letter-spacing:0.16em;text-transform:uppercase;color:#8a8680}
 
-        /* GLASS CARD STYLE */
-        .glass-card {
-            background: var(--glass);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 40px;
-            margin-bottom: 24px;
-            transition: border 0.3s ease;
-        }
+/* MARQUEE */
+.marquee-wrap{overflow:hidden;padding:0.75rem 0;background:#141413;border-top:1px solid rgba(240,236,228,0.05);border-bottom:1px solid rgba(240,236,228,0.05)}
+.marquee-track{display:flex;gap:3rem;animation:scroll 22s linear infinite;white-space:nowrap}
+.marquee-track span{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:#8a8680;flex-shrink:0}
+.marquee-track span.dot{color:#c9a96e}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-        .glass-card:hover {
-            border-color: rgba(255, 255, 255, 0.15);
-        }
+/* SECTIONS */
+.section{padding:6rem 3rem}
+.section.dark{background:#141413}
+.section.light{background:#0e0e0d}
+.sec-wrap{max-width:1100px;margin:0 auto}
+.sec-head{display:flex;align-items:baseline;gap:1.5rem;margin-bottom:4rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(201,169,110,0.18)}
+.sec-n{font-family:'Playfair Display',serif;font-size:0.8rem;color:#c9a96e;letter-spacing:0.1em}
+.sec-t{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:300;color:#f0ece4}
+.sec-t em{font-style:italic;color:#e8d5b0}
 
-        /* HEADER */
-        header {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
+/* EXP */
+.exp-item{display:grid;grid-template-columns:240px 1fr;gap:3rem;padding:2.5rem 0;border-bottom:1px solid rgba(240,236,228,0.06)}
+.exp-item:first-child{padding-top:0}
+.exp-item:last-child{border-bottom:none}
+.exp-badge{display:inline-block;font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:#c9a96e;border:1px solid rgba(201,169,110,0.4);padding:0.2rem 0.6rem;margin-bottom:0.8rem}
+.exp-co{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:300;color:#f0ece4;margin-bottom:0.2rem}
+.exp-city{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#8a8680}
+.exp-date{font-size:0.75rem;color:#c9a96e;margin-top:0.6rem}
+.exp-role{font-family:'Playfair Display',serif;font-style:italic;font-size:1.2rem;font-weight:300;color:#e8d5b0;margin-bottom:1.2rem;line-height:1.3}
+.exp-ul{list-style:none;display:flex;flex-direction:column;gap:0.8rem}
+.exp-ul li{font-size:0.83rem;color:#8a8680;padding-left:1.3rem;position:relative;line-height:1.75}
+.exp-ul li::before{content:'';position:absolute;left:0;top:0.7em;width:12px;height:1px;background:#c9a96e}
+.exp-ul li strong{color:#f0ece4;font-weight:300}
 
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--blue);
-            padding: 5px;
-            box-shadow: 0 0 20px rgba(0, 122, 255, 0.3);
-        }
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.skill-col{padding:2rem;border-right:1px solid rgba(240,236,228,0.06)}
+.skill-col:last-child{border-right:none}
+.skill-col-t{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:#c9a96e;margin-bottom:1.5rem;padding-bottom:0.8rem;border-bottom:1px solid rgba(201,169,110,0.18)}
+.skill-list{list-style:none;display:flex;flex-direction:column;gap:0.65rem}
+.skill-list li{font-size:0.83rem;color:#8a8680;display:flex;align-items:center;gap:0.75rem}
+.skill-list li::before{content:'';width:16px;height:1px;background:#c9a96e;flex-shrink:0}
 
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            background: linear-gradient(90deg, #fff, #888);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+/* EDU */
+.edu-row{display:grid;grid-template-columns:240px 1fr;gap:3rem}
+.edu-lbl{font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:#8a8680;margin-bottom:0.4rem}
+.edu-yr{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:300;color:#c9a96e;line-height:1}
+.edu-school{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:300;color:#f0ece4;margin-bottom:0.5rem;line-height:1.25}
+.edu-spec{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:#c9a96e}
 
-        .role {
-            color: var(--blue);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.8rem;
-            margin-bottom: 10px;
-            display: block;
-        }
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem}
+.about-t{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:#c9a96e;margin-bottom:1.8rem;padding-bottom:0.75rem;border-bottom:1px solid rgba(201,169,110,0.18)}
+.lang-row{display:flex;justify-content:space-between;align-items:center;padding:0.8rem 0;border-bottom:1px solid rgba(240,236,228,0.06);font-size:0.83rem;color:#f0ece4}
+.lang-row:last-child{border-bottom:none}
+.lang-lv{font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:#c9a96e}
+.dots{display:flex;gap:4px}
+.dot-c{width:6px;height:6px;border-radius:50%;background:rgba(201,169,110,0.15)}
+.dot-c.on{background:#c9a96e}
+.tags{display:flex;flex-wrap:wrap;gap:0.6rem}
+.tag{font-size:0.68rem;letter-spacing:0.09em;text-transform:uppercase;padding:0.45rem 1rem;border:1px solid rgba(201,169,110,0.2);color:#8a8680;transition:all 0.25s}
+.tag:hover{border-color:#c9a96e;color:#c9a96e}
 
-        /* TEXT DECOR */
-        h2 {
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+/* FOOTER */
+footer{background:#0a0a09;border-top:1px solid rgba(201,169,110,0.15);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.f-name{font-family:'Playfair Display',serif;font-size:0.85rem;font-weight:300;letter-spacing:0.12em;color:#8a8680}
+.f-r{font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:#8a8680}
+.f-r span{color:#c9a96e}
 
-        h2::after {
-            content: "";
-            height: 1px;
-            flex-grow: 1;
-            background: linear-gradient(90deg, var(--red), transparent);
-        }
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.75s ease,transform 0.75s ease}
+.reveal.show{opacity:1;transform:none}
 
-        .contact-link {
-            color: #aaa;
-            text-decoration: none;
-            font-size: 0.9rem;
-            margin-right: 20px;
-            transition: color 0.3s;
-        }
-
-        .contact-link:hover { color: var(--red); }
-
-        /* LISTS */
-        .exp-item { margin-bottom: 25px; }
-        .exp-item h3 { font-size: 1.1rem; color: #fff; }
-        .exp-item p { color: #888; font-size: 0.95rem; }
-        .exp-item .date { color: var(--blue); font-size: 0.8rem; font-weight: 700; }
-
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill-badge {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 8px 16px;
-            border-radius: 100px;
-            font-size: 0.85rem;
-            border: 1px solid var(--glass-border);
-            transition: all 0.3s;
-        }
-
-        .skill-badge:hover {
-            background: var(--red);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 77, 77, 0.4);
-        }
-
-        @media (max-width: 600px) {
-            header { flex-direction: column; text-align: center; }
-            h1 { font-size: 1.8rem; }
-        }
-    </style>
+@media(max-width:900px){
+  #hero{grid-template-columns:1fr;min-height:auto}
+  .hero-photo{height:75vw}
+  .hero-text{padding:3rem 1.5rem 6rem}
+  .hero-stats{position:static}
+  nav{padding:1.2rem 1.5rem}
+  nav::after{left:1.5rem;right:1.5rem}
+  .nav-links{gap:1.5rem}
+  .section{padding:4rem 1.5rem}
+  .exp-item,.edu-row{grid-template-columns:1fr;gap:0.75rem}
+  .skills-grid{grid-template-columns:1fr}
+  .skill-col{border-right:none;border-bottom:1px solid rgba(240,236,228,0.06)}
+  .about-grid{grid-template-columns:1fr;gap:3rem}
+  footer{flex-direction:column;gap:0.75rem;text-align:center;padding:1.5rem}
+}
+@media(max-width:560px){.nav-links{display:none}}
+</style>
 </head>
 <body>
 
-    <div class="container">
-        
-        <!-- HEADER CARD -->
-        <div class="glass-card">
-            <header>
-                <img src="https://i.ibb.co/LzdS6Y63/pvx4y-N8-P.jpg" alt="Бектурсун Улар" class="profile-img">
-                <div>
-                    <span class="role">Администратор / Старший администратор</span>
-                    <h1>Бектурсун Улар</h1>
-                    <div style="margin-top: 15px;">
-                        <a href="tel:0559463626" class="contact-link">📞 0559 46 36 26</a>
-                        <span class="contact-link">📍 Бишкек</span>
-                    </div>
-                </div>
-            </header>
-        </div>
+<nav>
+  <a class="nav-logo" href="#">Б. Улар</a>
+  <ul class="nav-links">
+    <li><a href="#exp">Опыт</a></li>
+    <li><a href="#skills">Навыки</a></li>
+    <li><a href="#edu">Образование</a></li>
+    <li><a href="#about">О себе</a></li>
+  </ul>
+</nav>
 
-        <!-- ABOUT -->
-        <div class="glass-card">
-            <h2>О себе</h2>
-            <p style="color: #ccc;">Опытный администратор со знанием стандартов сервиса. Цель: грамотная координация работы смены и создание уютной атмосферы для гостей. Сочетаю дисциплину студента-медика КГМА с навыками управления в премиум-сегменте.</p>
-        </div>
-
-        <!-- EXPERIENCE -->
-        <div class="glass-card">
-            <h2>Опыт работы</h2>
-            
-            <div class="exp-item">
-                <span class="date">2024 — ПО НАСТ. ВРЕМЯ</span>
-                <h3>Старший администратор / ОКК</h3>
-                <p>Medical Assistance Group</p>
-            </div>
-
-            <div class="exp-item">
-                <span class="date">РАНЕЕ</span>
-                <h3>Администратор</h3>
-                <p>Клуб «Green Club» (г. Каракол)</p>
-            </div>
-
-            <div class="exp-item">
-                <span class="date">HORECA</span>
-                <h3>Официант (Premium)</h3>
-                <p>Ресторан «HEDO» (Москва) / «Барашек» (Бишкек)</p>
-            </div>
-        </div>
-
-        <!-- SKILLS & EDUCATION -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-            
-            <div class="glass-card" style="margin-bottom: 0;">
-                <h2>Навыки</h2>
-                <div class="skills-container">
-                    <div class="skill-badge">Клиентский сервис</div>
-                    <div class="skill-badge">Управление</div>
-                    <div class="skill-badge">Контроль качества</div>
-                    <div class="skill-badge">Конфликтология</div>
-                    <div class="skill-badge">Деловая речь</div>
-                </div>
-            </div>
-
-            <div class="glass-card" style="margin-bottom: 0;">
-                <h2>Образование</h2>
-                <div class="exp-item">
-                    <span class="date">2022 — 2027</span>
-                    <h3>КГМА (Стоматология)</h3>
-                    <p>Кыргызская государственная медицинская академия</p>
-                </div>
-            </div>
-
-        </div>
-
+<section id="hero">
+  <div class="hero-photo">
+    <img src="me.jpg" alt="Бектурсун Улар"/>
+    <div class="hero-photo-overlay"></div>
+  </div>
+  <div class="hero-text">
+    <span class="hero-tag">Резюме · Бишкек · 2025</span>
+    <h1 class="hero-name">Бектурсун<em>Улар</em></h1>
+    <p class="hero-pos">Администратор &nbsp;/&nbsp; Старший администратор</p>
+    <p class="hero-bio">Опытный администратор с навыком контроля качества сервиса и знанием стандартов клиентского обслуживания. Грамотная координация работы смены, встреча гостей на высшем уровне и оперативное решение любых организационных вопросов. Умею решать конфликтные ситуации, координировать команду и создавать уютную атмосферу для гостей.</p>
+    <div class="contacts">
+      <a class="c-row" href="tel:+996559463626"><span class="c-label">Тел.</span>0559 46 36 26</a>
+      <div class="c-row"><span class="c-label">Город</span>Бишкек, Кыргызстан</div>
+      <div class="c-row"><span class="c-label">Д.р.</span>22.12.2003 · 22 года</div>
+      <div class="c-row"><span class="c-label">ФИО</span>Бектурсун Улар Эрикович</div>
     </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><span class="stat-val">3+</span><span class="stat-lbl">Места работы</span></div>
+    <div class="hero-stat"><span class="stat-val">3</span><span class="stat-lbl">Языка</span></div>
+    <div class="hero-stat"><span class="stat-val">22</span><span class="stat-lbl">Года</span></div>
+    <div class="hero-stat"><span class="stat-val">∞</span><span class="stat-lbl">Клиентоориентированность</span></div>
+  </div>
+</section>
 
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Администратор</span><span class="dot">·</span>
+    <span>Контроль качества</span><span class="dot">·</span>
+    <span>Клиентский сервис</span><span class="dot">·</span>
+    <span>Банкетный менеджмент</span><span class="dot">·</span>
+    <span>Управление командой</span><span class="dot">·</span>
+    <span>Бишкек</span><span class="dot">·</span>
+    <span>Администратор</span><span class="dot">·</span>
+    <span>Контроль качества</span><span class="dot">·</span>
+    <span>Клиентский сервис</span><span class="dot">·</span>
+    <span>Банкетный менеджмент</span><span class="dot">·</span>
+    <span>Управление командой</span><span class="dot">·</span>
+    <span>Бишкек</span><span class="dot">·</span>
+  </div>
+</div>
+
+<section id="exp" class="section dark">
+  <div class="sec-wrap">
+    <div class="sec-head reveal">
+      <span class="sec-n">01</span>
+      <h2 class="sec-t">Опыт <em>работы</em></h2>
+    </div>
+    <div class="exp-item reveal">
+      <div>
+        <span class="exp-badge">Текущее место</span>
+        <p class="exp-co">Medical Assistance Group</p>
+        <p class="exp-city">Бишкек</p>
+        <p class="exp-date">2024 — Настоящее время</p>
+      </div>
+      <div>
+        <p class="exp-role">Старший администратор / Оператор колл-центра / Отдел контроля качества</p>
+        <ul class="exp-ul">
+          <li><strong>Работа в колл-центре:</strong> Обработка входящих и исходящих обращений, консультирование клиентов по регламентам компании.</li>
+          <li><strong>Контроль качества:</strong> Проверка соблюдения скриптов, прослушивание разговоров и работа над улучшением качества обслуживания.</li>
+          <li><strong>Клиентский сервис:</strong> Обеспечение сервиса премиального уровня, работа с возражениями и жалобами, соблюдение строгой конфиденциальности.</li>
+          <li><strong>Администрирование и БД:</strong> Сбор и внесение данных в базу, ведение отчетности и документации.</li>
+          <li><strong>Управление:</strong> Координация работы сотрудников смены и ответственность за кассовые операции.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item reveal">
+      <div>
+        <span class="exp-badge">Ресторанный бизнес</span>
+        <p class="exp-co">Рестобар «Туман»</p>
+        <p class="exp-city">Ош</p>
+      </div>
+      <div>
+        <p class="exp-role">Администратор</p>
+        <ul class="exp-ul">
+          <li><strong>Hostess & Reception:</strong> Встреча и размещение гостей (Seat management), создание атмосферы гостеприимства.</li>
+          <li><strong>Банкетный менеджмент:</strong> Организация и полное сопровождение банкетных мероприятий.</li>
+          <li><strong>Контроль сервиса:</strong> Мониторинг работы официантов и технического персонала, знание ресторанной психологии для эффективного решения запросов гостей.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item reveal">
+      <div>
+        <span class="exp-badge">Развлечения</span>
+        <p class="exp-co">Клуб «Green Club»</p>
+        <p class="exp-city">Каракол</p>
+      </div>
+      <div>
+        <p class="exp-role">Администратор</p>
+        <ul class="exp-ul">
+          <li><strong>Оперативное управление:</strong> Полный контроль жизнедеятельности заведения в течение смены.</li>
+          <li><strong>Менеджмент персонала:</strong> Управление командой, постановка задач и контроль их выполнения.</li>
+          <li><strong>Безопасность:</strong> Тесное взаимодействие со службой безопасности для предотвращения конфликтных ситуаций и обеспечения порядка.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="section light">
+  <div class="sec-wrap">
+    <div class="sec-head reveal">
+      <span class="sec-n">02</span>
+      <h2 class="sec-t">Профессиональные <em>навыки</em></h2>
+    </div>
+    <div class="skills-grid reveal">
+      <div class="skill-col">
+        <p class="skill-col-t">Коммуникация</p>
+        <ul class="skill-list">
+          <li>Клиентский сервис и деловое общение</li>
+          <li>Грамотная устная речь</li>
+          <li>Работа с возражениями</li>
+        </ul>
+      </div>
+      <div class="skill-col">
+        <p class="skill-col-t">Данные и документы</p>
+        <ul class="skill-list">
+          <li>Обработка и систематизация данных</li>
+          <li>Уверенное владение ПК</li>
+          <li>Работа с внутренними базами и документацией</li>
+        </ul>
+      </div>
+      <div class="skill-col">
+        <p class="skill-col-t">Управление</p>
+        <ul class="skill-list">
+          <li>Стрессоустойчивость</li>
+          <li>Соблюдение регламентов и инструкций</li>
+          <li>Координация работы смены</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="edu" class="section dark">
+  <div class="sec-wrap">
+    <div class="sec-head reveal">
+      <span class="sec-n">03</span>
+      <h2 class="sec-t"><em>Образование</em></h2>
+    </div>
+    <div class="edu-row reveal">
+      <div>
+        <p class="edu-lbl">Период обучения</p>
+        <p class="edu-yr">2022 —<br>наст. вр.</p>
+      </div>
+      <div>
+        <p class="edu-school">Кыргызская государственная медицинская академия (КГМА)</p>
+        <p class="edu-spec">Специальность: Стоматология</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section light">
+  <div class="sec-wrap">
+    <div class="sec-head reveal">
+      <span class="sec-n">04</span>
+      <h2 class="sec-t">О <em>себе</em></h2>
+    </div>
+    <div class="about-grid">
+      <div class="reveal">
+        <p class="about-t">Знание языков</p>
+        <div class="lang-row">
+          <span>Русский</span>
+          <div class="dots"><div class="dot-c on"></div><div class="dot-c on"></div><div class="dot-c on"></div><div class="dot-c on"></div><div class="dot-c on"></div></div>
+          <span class="lang-lv">Свободно</span>
+        </div>
+        <div class="lang-row">
+          <span>Кыргызский</span>
+          <div class="dots"><div class="dot-c on"></div><div class="dot-c on"></div><div class="dot-c on"></div><div class="dot-c on"></div><div class="dot-c on"></div></div>
+          <span class="lang-lv">Свободно</span>
+        </div>
+        <div class="lang-row">
+          <span>Английский</span>
+          <div class="dots"><div class="dot-c on"></div><div class="dot-c on"></div><div class="dot-c"></div><div class="dot-c"></div><div class="dot-c"></div></div>
+          <span class="lang-lv">Базовый</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <p class="about-t">Личные качества</p>
+        <div class="tags">
+          <span class="tag">Ответственность</span>
+          <span class="tag">Внимательность к деталям</span>
+          <span class="tag">Высокая обучаемость</span>
+          <span class="tag">Пунктуальность</span>
+          <span class="tag">Клиентоориентированность</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="f-name">Бектурсун Улар Эрикович</span>
+  <span class="f-r">Бишкек · <span>0559 46 36 26</span> · 2025</span>
+</footer>
+
+<script>
+const els = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if(e.isIntersecting){
+      setTimeout(() => e.target.classList.add('show'), i * 80);
+      io.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.1});
+els.forEach(el => io.observe(el));
+
+const navLinks = document.querySelectorAll('.nav-links a');
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  sections.forEach(s => { if(window.scrollY >= s.offsetTop - 150) cur = s.id; });
+  navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + cur ? '#c9a96e' : ''; });
+});
+</script>
 </body>
 </html>
